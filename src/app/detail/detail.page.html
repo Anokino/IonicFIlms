@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Détails</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+    <ion-card>
+        <ion-card-header>
+            <ion-img src={{film.posterUrl}}></ion-img>
+        </ion-card-header>
+    </ion-card>
+    <ion-item>
+        <ion-label position="stacked">Titre :</ion-label>
+        <p>
+            {{film.title}}
+        </p>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Réalisateur :</ion-label>
+        <p>
+            {{film.director}}
+        </p>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Année :</ion-label>
+        <p>
+            {{film.year}}
+        </p>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Synopsis :</ion-label>
+        <p>
+            {{film.plot}}
+        </p>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Acteurs :</ion-label>
+        <p>
+            {{film.actors}}
+        </p>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Durée :</ion-label>
+        <p>
+            {{film.runtime}} minutes
+        </p>
+    </ion-item>
+    <ion-item>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col *ngFor="let genre of film.genres">
+                    <ion-chip>
+                        <ion-label>
+                            {{genre}}
+                        </ion-label>
+                    </ion-chip>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-item>
+</ion-content>
